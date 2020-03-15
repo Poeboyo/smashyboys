@@ -4,7 +4,7 @@
 
 This app comes from our friend group being distant and wanting to come together for a Couch Gaming/ Smash Ultimate Tourney vibe.
 
-## How this (intends to) work
+## How it (intends to) work(s)
 
 - You, as the user will register an acoount
 - The User will be logged in and brought to the home page
