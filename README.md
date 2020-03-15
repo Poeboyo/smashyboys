@@ -1,5 +1,7 @@
 # Smash Locale
 
+### Authors: Jeffrey Poe, Sam Nee, Cristian Funez
+
 This app comes from our friend group being distant and wanting to come together for a Couch Gaming/ Smash Ultimate Tourney vibe.
 
 ## How this (intends to) work
