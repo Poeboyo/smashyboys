@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import "./style.css";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
@@ -21,6 +22,7 @@ import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import PersonPinCircleIcon from "@material-ui/icons/PersonPinCircle";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import PeopleIcon from "@material-ui/icons/People";
+import smashball from "../../assets/images/SmashBall.png";
 
 const drawerWidth = 240;
 
@@ -30,6 +32,7 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
+    background: "#2196f3",
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
@@ -120,8 +123,9 @@ export default function Nav() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Smashing The Boys
+            Smash Locale
           </Typography>
+          <img src={smashball} alt="smash ball" id="smashball" />
         </Toolbar>
       </AppBar>
       <Drawer
