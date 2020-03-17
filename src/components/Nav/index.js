@@ -23,6 +23,7 @@ import PersonPinCircleIcon from "@material-ui/icons/PersonPinCircle";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import PeopleIcon from "@material-ui/icons/People";
 import smashball from "../../assets/images/SmashBall.png";
+import ButtonLocale from "../Button";
 
 const drawerWidth = 240;
 
@@ -202,6 +203,7 @@ export default function Nav() {
         </List>
       </Drawer>
       <main className={classes.content}>
+        <ButtonLocale></ButtonLocale>
         <div className={classes.toolbar} />
         {/* Content and Other Components Here */}
       </main>
