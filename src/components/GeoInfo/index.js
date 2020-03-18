@@ -2,7 +2,7 @@ import React from "react";
 import useGeolocation from "react-hook-geolocation";
 import "./style.css";
 
-function GeolocationContainer() {
+function GeoInfo() {
   const geolocation = useGeolocation({
     enableHighAccuracy: true,
     maximumAge: 15000,
@@ -29,4 +29,4 @@ function GeolocationContainer() {
   );
 }
 
-export default GeolocationContainer;
+export default GeoInfo;
