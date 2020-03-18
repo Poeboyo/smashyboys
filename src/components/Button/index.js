@@ -1,13 +1,17 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import useGeolocation from "react-hook-geolocation";
 import "./style.css";
 
-function ComponentWithGeolocation() {
-  const geolocation = useGeolocation();
+function GeolocationContainer() {
+  const geolocation = useGeolocation({
+    enableHighAccuracy: true,
+    maximumAge: 15000,
+    timeout: 12000
+  });
 
-  return !geolocation.error
-    ? console.log(
+  return (
+    <div id="geoLocationInfo">
+      {!geolocation.error ? (
         <ul>
           <li>Latitude: {geolocation.latitude}</li>
           <li>Longitude: {geolocation.longitude}</li>
@@ -18,20 +22,11 @@ function ComponentWithGeolocation() {
           <li>Speed: {geolocation.speed}</li>
           <li>Timestamp: {geolocation.timestamp}</li>
         </ul>
-      )
-    : console.log(<p>No geolocation, sorry.</p>);
-}
-
-//Gets Location of User
-export default function ButtonLocale() {
-  return (
-    <Button
-      variant="contained"
-      color="primary"
-      onClick={ComponentWithGeolocation}
-      id="button"
-    >
-      Get Location
-    </Button>
+      ) : (
+        <p>No geolocation, sorry.</p>
+      )}
+    </div>
   );
 }
+
+export default GeolocationContainer;
