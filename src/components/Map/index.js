@@ -1,19 +1,26 @@
-import React from "react";
-import "./style.css";
-
-function Map() {
-  return (
-    <div id="mapFrame">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.1735440860225!2d-81.15191758461427!3d28.534502982456623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e75d71ca529139%3A0xd1afb7432d6e759!2s718%20Terrace%20Spring%20Dr%2C%20Orlando%2C%20FL%2032828!5e0!3m2!1sen!2sus!4v1584578789554!5m2!1sen!2sus"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-        title="Map"
-        id="ggMap"
-      ></iframe>
-    </div>
-  );
+import React, { Component } from "react";
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import "dotenv";
+const style = {
+  height: "65vh",
+  width: "90vh",
+  marginLeft: "70vh",
+  marginTop: "-25vh",
+  position: "absolute"
+};
+export class MapContainer extends Component {
+  render() {
+    return (
+      <Map google={this.props.google} zoom={14} id="googleMap" style={style}>
+        <Marker onClick={this.onMarkerClick} name={"Current location"} />
+        <InfoWindow onClose={this.onInfoWindowClose}>
+          <div></div>
+        </InfoWindow>
+      </Map>
+    );
+  }
 }
 
-export default Map;
+export default GoogleApiWrapper({
+  apiKey: process.env.GOOGLE_MAPS_API_KEY
+})(MapContainer);
