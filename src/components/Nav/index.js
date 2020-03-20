@@ -24,7 +24,7 @@ import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import PeopleIcon from "@material-ui/icons/People";
 import smashball from "../../assets/images/SmashBall.png";
 import GeoInfo from "../GeoInfo";
-import Map from "../Map";
+import GoogleApiWrapper from "../Map";
 
 const drawerWidth = 240;
 
@@ -205,7 +205,7 @@ export default function Nav() {
       </Drawer>
       <main className={classes.content}>
         <GeoInfo />
-        <Map />
+        <GoogleApiWrapper />
         <div className={classes.toolbar} />
         {/* Content and Other Components Here */}
       </main>
