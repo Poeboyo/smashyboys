@@ -9,6 +9,11 @@ function GeoInfo() {
     timeout: 12000
   });
 
+  this.setState({
+    localeLatitude: geolocation.latitude,
+    localeLongitude: geolocation.longitude
+  });
+
   return (
     <div id="geoLocationInfo">
       {!geolocation.error ? (

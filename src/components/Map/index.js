@@ -20,8 +20,8 @@ export class MapContainer extends Component {
         id="googleMap"
         style={style}
         initialCenter={{
-          lat: {position.latitude},
-          lng: -88.081807
+          lat: this.state.localeLatitude,
+          lng: this.state.localeLongitude
         }}
       >
         <Marker onClick={this.onMarkerClick} name={"Current location"} />
