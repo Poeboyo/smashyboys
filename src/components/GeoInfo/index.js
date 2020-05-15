@@ -3,16 +3,16 @@ import useGeolocation from "react-hook-geolocation";
 import "./style.css";
 
 function GeoInfo() {
-  const geolocation = useGeolocation({
+  var geolocation = useGeolocation({
     enableHighAccuracy: true,
     maximumAge: 15000,
-    timeout: 12000
+    timeout: 12000,
   });
 
-  this.setState({
-    localeLatitude: geolocation.latitude,
-    localeLongitude: geolocation.longitude
-  });
+  // this.setState({
+  //   localeLatitude: geolocation.latitude,
+  //   localeLongitude: geolocation.longitude,
+  // });
 
   return (
     <div id="geoLocationInfo">
