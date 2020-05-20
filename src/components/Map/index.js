@@ -13,14 +13,17 @@ const style = {
 export class MapContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = { lat: undefined, long: undefined };
+    this.state = { lat: 0, long: 0 };
+    console.log(this);
   }
+
   render() {
     let geo = navigator.geolocation;
     function success(pos) {
       var crd = pos.coords;
-      this.setState({ lat: crd.latitude });
-      this.setState({ long: crd.longitude });
+      console.log(this);
+      this.MapContainer.setState({ lat: crd.latitude });
+      this.MapContainer.setState({ long: crd.longitude });
 
       console.log("Your current position is:");
       console.log(`Latitude : ${crd.latitude}`);
